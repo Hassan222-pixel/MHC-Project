@@ -7,19 +7,90 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 🏫 MHCode Academy
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 💻 Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**MHCode Academy** is an online learning platform designed to provide high-quality technology education to students around the world.  
+It offers a wide range of courses in different technological fields, helping learners gain practical skills and prepare for real-world careers.
+
+### 🎯 Main Objectives
+- Empower students with practical tech skills.  
+- Provide structured learning paths from beginner to advanced levels.  
+- Create a user-friendly environment for both students and instructors.  
+
+---
+
+## 🏠 Home Page
+
+The home page introduces the user to MHCode Academy and includes:
+
+- Overview of the academy’s **mission, vision, and goals**.  
+- **Featured highlights** of the academy (unique features, technologies taught, and student success stories).  
+- **Student reviews and ratings** from previous learners.  
+- **Social media links and icons** for connecting with the academy.  
+- General information about the academy’s purpose and educational philosophy.  
+
+---
+
+## 📚 Courses Page
+
+Students can easily browse and filter available courses.
+
+### Features:
+- **View all courses** offered by the academy.  
+- **Filter courses** by category (e.g., Web Development, Cybersecurity, AI) and difficulty level (Beginner, Intermediate, Advanced).  
+- **View course details**, including:
+  - Introductory video  
+  - Instructor information  
+  - Course duration and lecture count  
+  - Price and enrollment info  
+  - Student comments, reviews, and ratings  
+
+---
+
+## 📰 Blog Page
+
+The Blog section contains educational articles and updates from the tech world.
+
+### Features:
+- **Featured highlights**: Best practices, AI and coding, career growth, and more.  
+- **Popular categories** and **tags** for easy navigation.  
+- **Detailed blog posts** on technology, programming tips, and industry news.  
+
+---
+
+## 🧭 About Us Page
+
+This section provides insights into the academy’s background and philosophy.
+
+### Includes:
+- Academy goals  
+- Mission and vision statements  
+- Core values  
+- Learning methodology  
+- Instructor profiles  
+- Student testimonials and feedback  
+
+---
+
+## 📞 Contact Us Page
+
+Students who wish to enroll in a course can do so through a simple form.
+
+### Registration Process:
+1. Go to the **Contact Us** page.  
+2. Fill out the form with:
+   - Name  
+   - Email  
+   - Phone number  
+   - Course name  
+3. Submit the form.  
+4. The administrator receives the request and manages the **payment and registration process**.  
+
+---
+
 
 
 ## 📸 Project Screenshots
@@ -39,43 +110,66 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ### 🔐 Login Page  
 ![Login Page](https://i.imgur.com/qI1ZqEx.png)
 
---- 
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Admin Dashboard
 
-## Laravel Sponsors
+The Admin Dashboard is a powerful tool for managing all content on the platform.  
+All data (courses, reviews, blog posts, etc.) is **dynamic**, meaning it can be changed from the dashboard without modifying code.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Admin Features:
+- Add, edit, or delete courses.  
+- Manage course prices, descriptions, and media.  
+- Approve or remove student reviews.  
+- Post and update blog content.  
+- Manage instructor and student information.  
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🔐 Admin Role & Access Permissions
 
-## Contributing
+MHCode Academy implements a **Role-Based Access Control (RBAC)** system to secure administrative actions.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Roles:
+1. **Admin**  
+   - Full control over the entire website and dashboard.  
+   - Can manage users, instructors, courses, and settings.  
+   - Approves or removes content.  
 
-## Code of Conduct
+2. **Instructor**  
+   - Can create and manage their own courses.  
+   - View student feedback and grades for their courses.  
+   - Cannot modify other instructors’ courses or system settings.  
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Student**  
+   - Can view and enroll in courses.  
+   - Post reviews and ratings after completion.  
+   - Can edit their own profile.  
 
-## Security Vulnerabilities
+### Access Features:
+- **Authentication**: Secure login for all roles.  
+- **Authorization middleware** in Laravel ensures each user only accesses allowed sections.  
+- **Audit logs** to track changes made by administrators.  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🛠️ Technologies Used
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Laravel** (Backend Framework)  
+- **Blade Templates** (Frontend Rendering)  
+- **MySQL** (Database)  
+- **Bootstrap** (Styling)  
+- **JavaScript** (Interactivity)  
+- **Authentication System** (Laravel Breeze / Fortify / Jetstream — depending on setup)  
+
+---
+
+## 🚀 Future Enhancements
+
+- Add an **online payment gateway** for direct enrollments.  
+- Enable **live chat support** with instructors.  
+- Integrate **AI-based course recommendations**.  
+- Add **certificate generation** after course completion.  
