@@ -10,15 +10,15 @@ class InstructorController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:instructor-list|instructor-create|instructor-edit|instructor-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:instructor-create', ['only' => ['create','store']]);
-        $this->middleware('permission:instructor-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:instructor-list|instructor-create|instructor-edit|instructor-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:instructor-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:instructor-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:instructor-delete', ['only' => ['destroy']]);
     }
 
     public function index()
     {
-        $instructors = Instructor::latest()->paginate(5);
+        $instructors = Instructor::all();
         return view('instructors.index', compact('instructors'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -31,13 +31,13 @@ class InstructorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'              => 'required|string|max:255',
-            'email'             => 'required|email|unique:instructors',
-            'title'             => 'nullable|string|max:255',
-            'description'       => 'nullable|string',
-            'students_graduated'=> 'nullable|integer',
-            'rating'            => 'nullable|numeric|min:0|max:5',
-            'image'             => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:instructors',
+            'title' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'students_graduated' => 'nullable|integer',
+            'rating' => 'nullable|numeric|min:0|max:5',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
 
         $data = $request->all();
@@ -49,7 +49,7 @@ class InstructorController extends Controller
         Instructor::create($data);
 
         return redirect()->route('instructors.index')
-            ->with('success','Instructor created successfully.');
+            ->with('success', 'Instructor created successfully.');
     }
 
     public function show(Instructor $instructor)
@@ -65,13 +65,13 @@ class InstructorController extends Controller
     public function update(Request $request, Instructor $instructor)
     {
         $request->validate([
-            'name'              => 'required|string|max:255',
-            'email'             => 'required|email|unique:instructors,email,' . $instructor->id,
-            'title'             => 'nullable|string|max:255',
-            'description'       => 'nullable|string',
-            'students_graduated'=> 'nullable|integer',
-            'rating'            => 'nullable|numeric|min:0|max:5',
-            'image'             => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:instructors,email,' . $instructor->id,
+            'title' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'students_graduated' => 'nullable|integer',
+            'rating' => 'nullable|numeric|min:0|max:5',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
 
         $data = $request->all();
@@ -86,7 +86,7 @@ class InstructorController extends Controller
         $instructor->update($data);
 
         return redirect()->route('instructors.index')
-            ->with('success','Instructor updated successfully.');
+            ->with('success', 'Instructor updated successfully.');
     }
 
     public function destroy(Instructor $instructor)
@@ -98,6 +98,6 @@ class InstructorController extends Controller
         $instructor->delete();
 
         return redirect()->route('instructors.index')
-            ->with('success','Instructor deleted successfully.');
+            ->with('success', 'Instructor deleted successfully.');
     }
 }
